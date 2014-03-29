@@ -4,7 +4,7 @@ import com.google.common.collect.Lists;
 import java.util.List;
 
 public class Transformer {
-	public static <T> List transform(List<T> numbers, TransformStrategy<T> transformStrategy) {
+	public static <T, R> List transform(List<T> numbers, TransformStrategy<T, R> transformStrategy) {
 		List results = Lists.newArrayList();
 		for (T number : numbers){
 			results.add(transformStrategy.apply(number));

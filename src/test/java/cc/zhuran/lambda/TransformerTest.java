@@ -30,8 +30,14 @@ public class TransformerTest {
 	}
 
 	@Test
-	public void shouldUppercaseEveryStringInList(){
+	public void shouldUpperCaseEveryStringInList(){
 		List<String> results = Transformer.transform(words, word -> word.toUpperCase());
 		assertThat(results.equals(Lists.newArrayList("A", "AB", "ABC", "ABCD", "12")), is(true));
+	}
+
+	@Test
+	public void shouldGetTheLengthOfEveryStringInList(){
+		List<Integer> results = Transformer.transform(words, word -> word.length());
+		assertThat(results.equals(Lists.newArrayList(1, 2, 3, 4, 2)), is(true));
 	}
 }
