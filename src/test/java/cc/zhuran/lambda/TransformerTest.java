@@ -17,6 +17,11 @@ public class TransformerTest {
 
 	@Test
 	public void shouldDoubleEveryNumberInList(){
-		assertThat(Transformer.transform(numbers).equals(Lists.newArrayList(2, 4, 6, 8)), is(true));
+		assertThat(Transformer.transform(numbers, new DoubleTransformStrategy()).equals(Lists.newArrayList(2, 4, 6, 8)), is(true));
+	}
+
+	@Test
+	public void shouldTripleEveryNumberInList(){
+		assertThat(Transformer.transform(numbers, new TripleTransformStrategy()).equals(Lists.newArrayList(3, 6, 9, 12)), is(true));
 	}
 }
