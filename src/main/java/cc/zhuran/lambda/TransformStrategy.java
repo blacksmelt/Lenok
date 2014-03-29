@@ -1,5 +1,5 @@
 package cc.zhuran.lambda;
 
-public interface TransformStrategy {
-	public int apply(int number);
+public interface TransformStrategy<T> {
+	public T apply(T object);
 }
